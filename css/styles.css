@@ -1057,9 +1057,6 @@ a.card-cream:hover {
   background: var(--forest-ink);
 }
 .hero-banner .hero-slide.slide-poster img {
-  object-fit: contain;
-  object-position: right center;
-  background: #121812;
   transition: filter 0.8s ease;
 }
 .hero-overlay {
@@ -1105,12 +1102,9 @@ a.card-cream:hover {
   .hero.hero-banner { min-height: 70vh; }
   .hero-banner .hero-visual { width: 100%; margin-top: 0; }
   .hero-banner .hero-copy { padding-top: 4.2rem; }
-  .hero-banner .hero-slide.slide-poster img {
-    object-position: center bottom;
-  }
 }
 
-/* Slide 2 only: recede poster type behind the matching headline. */
+/* Slide 2 only: extra dark overlay so copy stays readable over bright neon. */
 .hero.hero-banner::before {
   content: "";
   position: absolute;
