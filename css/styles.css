@@ -1084,13 +1084,16 @@ a.card-cream:hover {
   max-width: 42rem;
   padding: 6.5rem 0 1.5rem;
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.8s ease;
+  transition: opacity 0.8s ease, visibility 0s linear 0.8s;
 }
 .hero-banner .hero-copy.is-active {
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
   z-index: 1;
+  transition: opacity 0.8s ease, visibility 0s linear 0s;
 }
 .hero-banner .stat-row {
   position: relative;
@@ -1117,21 +1120,21 @@ a.card-cream:hover {
   opacity: 0;
   transition: opacity 0.8s ease;
   background:
-    linear-gradient(180deg, rgba(24, 31, 28, 0.52) 0%, rgba(24, 31, 28, 0.42) 40%, rgba(24, 31, 28, 0.7) 100%),
-    linear-gradient(90deg, rgba(24, 31, 28, 0.58) 0%, rgba(24, 31, 28, 0.28) 52%, rgba(24, 31, 28, 0.16) 100%);
+    linear-gradient(180deg, rgba(24, 31, 28, 0.6) 0%, rgba(24, 31, 28, 0.5) 40%, rgba(24, 31, 28, 0.74) 100%),
+    linear-gradient(90deg, rgba(24, 31, 28, 0.66) 0%, rgba(24, 31, 28, 0.32) 52%, rgba(24, 31, 28, 0.18) 100%);
 }
 .hero.hero-banner:has(.slide-poster.is-active)::before {
   opacity: 1;
 }
 .hero-banner .hero-slide.slide-poster.is-active img {
-  filter: brightness(0.72);
+  filter: brightness(0.68);
 }
 @media (max-width: 800px) {
   .hero.hero-banner:has(.slide-poster.is-active)::before {
     background:
-      linear-gradient(180deg, rgba(24, 31, 28, 0.78) 0%, rgba(24, 31, 28, 0.7) 48%, rgba(24, 31, 28, 0.62) 100%);
+      linear-gradient(180deg, rgba(24, 31, 28, 0.82) 0%, rgba(24, 31, 28, 0.74) 48%, rgba(24, 31, 28, 0.64) 100%);
   }
   .hero-banner .hero-slide.slide-poster.is-active img {
-    filter: brightness(0.62);
+    filter: brightness(0.58);
   }
 }
