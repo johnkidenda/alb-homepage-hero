@@ -1058,7 +1058,9 @@ a.card-cream:hover {
 }
 .hero-banner .hero-slide.slide-poster img {
   object-fit: contain;
+  object-position: right center;
   background: #121812;
+  transition: filter 0.8s ease;
 }
 .hero-overlay {
   position: absolute;
@@ -1085,4 +1087,36 @@ a.card-cream:hover {
   .hero.hero-banner { min-height: 70vh; }
   .hero-banner .hero-visual { width: 100%; margin-top: 0; }
   .hero-banner .hero-copy { padding-top: 4.2rem; }
+  .hero-banner .hero-slide.slide-poster img {
+    object-position: center bottom;
+  }
+}
+
+/* Slide 2 only: recede Brett Hurt poster type so homepage headline stays primary. */
+.hero.hero-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  background:
+    linear-gradient(180deg, rgba(24, 31, 28, 0.78) 0%, rgba(24, 31, 28, 0.7) 40%, rgba(24, 31, 28, 0.84) 100%),
+    linear-gradient(90deg, rgba(24, 31, 28, 0.82) 0%, rgba(24, 31, 28, 0.48) 52%, rgba(24, 31, 28, 0.28) 100%);
+}
+.hero.hero-banner:has(.slide-poster.is-active)::before {
+  opacity: 1;
+}
+.hero-banner .hero-slide.slide-poster.is-active img {
+  filter: brightness(0.58);
+}
+@media (max-width: 800px) {
+  .hero.hero-banner:has(.slide-poster.is-active)::before {
+    background:
+      linear-gradient(180deg, rgba(24, 31, 28, 0.9) 0%, rgba(24, 31, 28, 0.84) 48%, rgba(24, 31, 28, 0.72) 100%);
+  }
+  .hero-banner .hero-slide.slide-poster.is-active img {
+    filter: brightness(0.48);
+  }
 }
