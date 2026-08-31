@@ -1057,7 +1057,8 @@ a.card-cream:hover {
   background: var(--forest-ink);
 }
 .hero-banner .hero-slide.slide-poster img {
-  transition: filter 0.8s ease;
+  object-fit: cover;
+  object-position: center;
 }
 .hero-overlay {
   position: absolute;
@@ -1104,7 +1105,7 @@ a.card-cream:hover {
   .hero-banner .hero-copy { padding-top: 4.2rem; }
 }
 
-/* Slide 2 only: extra dark overlay so copy stays readable over bright neon. */
+/* Slide 2 only: extra scrim so copy stays readable over bright neon, without crushing the photo. */
 .hero.hero-banner::before {
   content: "";
   position: absolute;
@@ -1114,21 +1115,15 @@ a.card-cream:hover {
   opacity: 0;
   transition: opacity 0.8s ease;
   background:
-    linear-gradient(180deg, rgba(24, 31, 28, 0.6) 0%, rgba(24, 31, 28, 0.5) 40%, rgba(24, 31, 28, 0.74) 100%),
-    linear-gradient(90deg, rgba(24, 31, 28, 0.66) 0%, rgba(24, 31, 28, 0.32) 52%, rgba(24, 31, 28, 0.18) 100%);
+    linear-gradient(90deg, rgba(24, 31, 28, 0.42) 0%, rgba(24, 31, 28, 0.18) 48%, rgba(24, 31, 28, 0.08) 100%),
+    linear-gradient(180deg, rgba(24, 31, 28, 0.22) 0%, rgba(24, 31, 28, 0.08) 36%, rgba(24, 31, 28, 0.4) 100%);
 }
 .hero.hero-banner:has(.slide-poster.is-active)::before {
   opacity: 1;
 }
-.hero-banner .hero-slide.slide-poster.is-active img {
-  filter: brightness(0.68);
-}
 @media (max-width: 800px) {
   .hero.hero-banner:has(.slide-poster.is-active)::before {
     background:
-      linear-gradient(180deg, rgba(24, 31, 28, 0.82) 0%, rgba(24, 31, 28, 0.74) 48%, rgba(24, 31, 28, 0.64) 100%);
-  }
-  .hero-banner .hero-slide.slide-poster.is-active img {
-    filter: brightness(0.58);
+      linear-gradient(180deg, rgba(24, 31, 28, 0.5) 0%, rgba(24, 31, 28, 0.28) 42%, rgba(24, 31, 28, 0.45) 100%);
   }
 }
