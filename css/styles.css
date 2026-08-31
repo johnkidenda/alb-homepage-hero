@@ -1071,11 +1071,26 @@ a.card-cream:hover {
     linear-gradient(180deg, rgba(24, 31, 28, 0.55) 0%, rgba(24, 31, 28, 0.35) 38%, rgba(24, 31, 28, 0.78) 100%),
     linear-gradient(90deg, rgba(24, 31, 28, 0.72) 0%, rgba(24, 31, 28, 0.28) 58%, rgba(24, 31, 28, 0.45) 100%);
 }
-.hero-banner .hero-copy {
+.hero-copy-stack {
   position: relative;
   z-index: 2;
-  padding: 6.5rem 0 1.5rem;
+  display: grid;
+  width: 100%;
+}
+.hero-banner .hero-copy {
+  grid-area: 1 / 1;
+  justify-self: center;
+  width: min(calc(100% - 2.5rem), 42rem);
   max-width: 42rem;
+  padding: 6.5rem 0 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+}
+.hero-banner .hero-copy.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
 }
 .hero-banner .stat-row {
   position: relative;
@@ -1092,7 +1107,7 @@ a.card-cream:hover {
   }
 }
 
-/* Slide 2 only: recede Brett Hurt poster type so homepage headline stays primary. */
+/* Slide 2 only: recede poster type behind the matching headline. */
 .hero.hero-banner::before {
   content: "";
   position: absolute;
@@ -1102,21 +1117,21 @@ a.card-cream:hover {
   opacity: 0;
   transition: opacity 0.8s ease;
   background:
-    linear-gradient(180deg, rgba(24, 31, 28, 0.78) 0%, rgba(24, 31, 28, 0.7) 40%, rgba(24, 31, 28, 0.84) 100%),
-    linear-gradient(90deg, rgba(24, 31, 28, 0.82) 0%, rgba(24, 31, 28, 0.48) 52%, rgba(24, 31, 28, 0.28) 100%);
+    linear-gradient(180deg, rgba(24, 31, 28, 0.52) 0%, rgba(24, 31, 28, 0.42) 40%, rgba(24, 31, 28, 0.7) 100%),
+    linear-gradient(90deg, rgba(24, 31, 28, 0.58) 0%, rgba(24, 31, 28, 0.28) 52%, rgba(24, 31, 28, 0.16) 100%);
 }
 .hero.hero-banner:has(.slide-poster.is-active)::before {
   opacity: 1;
 }
 .hero-banner .hero-slide.slide-poster.is-active img {
-  filter: brightness(0.58);
+  filter: brightness(0.72);
 }
 @media (max-width: 800px) {
   .hero.hero-banner:has(.slide-poster.is-active)::before {
     background:
-      linear-gradient(180deg, rgba(24, 31, 28, 0.9) 0%, rgba(24, 31, 28, 0.84) 48%, rgba(24, 31, 28, 0.72) 100%);
+      linear-gradient(180deg, rgba(24, 31, 28, 0.78) 0%, rgba(24, 31, 28, 0.7) 48%, rgba(24, 31, 28, 0.62) 100%);
   }
   .hero-banner .hero-slide.slide-poster.is-active img {
-    filter: brightness(0.48);
+    filter: brightness(0.62);
   }
 }
