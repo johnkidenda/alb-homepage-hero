@@ -1135,43 +1135,46 @@ a.card-cream:hover {
   }
 }
 
-/* Watch our story — native donor video, no autoplay */
-
-.story-band {
-  text-align: center;
-  border-top: 1px solid rgba(158, 169, 63, 0.16);
+/* Watch our story — under-hero donor video */
+.section-story {
+  background: var(--cream, #f4efe4);
+  padding: 3.2rem 0 3.6rem;
 }
-
-.story-band .eyebrow {
-  color: var(--gold);
+.section-story .story-wrap {
+  max-width: 52rem;
 }
-
-.story-band h2 {
-  color: var(--cream);
-  margin-bottom: 1.75rem;
+.section-story h2 {
+  margin: 0.35rem 0 1.4rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  font-size: clamp(1.85rem, 3.5vw, 2.6rem);
+  color: var(--forest-ink, #181f1c);
+  max-width: 18ch;
 }
-
-.story-inner {
-  width: min(calc(100% - 2.5rem), 880px);
-}
-
-.story-player {
+.story-video {
   position: relative;
-  aspect-ratio: 16 / 9;
-  background: var(--forest-ink);
-  border: 1px solid rgba(158, 169, 63, 0.22);
+  width: 100%;
+  border-radius: 4px;
   overflow: hidden;
+  background: var(--forest-ink, #181f1c);
+  box-shadow: 0 18px 40px rgba(24, 31, 28, 0.18);
 }
-
-.story-player video {
+.story-video video {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background: #050a06;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: #000;
 }
-
 .story-actions {
-  justify-content: center;
-  margin-top: 1.75rem;
+  margin-top: 1.35rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+@media (max-width: 800px) {
+  .section-story { padding: 2.4rem 0 2.8rem; }
 }
