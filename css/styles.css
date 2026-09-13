@@ -1139,6 +1139,7 @@ a.card-cream:hover {
 .section-story {
   background: var(--cream, #f4efe4);
   padding: 3.2rem 0 3.6rem;
+  scroll-margin-top: 5.5rem; /* clear sticky header (~85px) on #our-story jumps */
 }
 .section-story .story-wrap {
   max-width: 52rem;
@@ -1174,6 +1175,12 @@ a.card-cream:hover {
   flex-wrap: wrap;
   gap: 0.75rem;
   align-items: center;
+}
+.story-actions .btn {
+  width: 100%;
+  max-width: 22rem;
+  justify-content: center;
+  text-align: center;
 }
 @media (max-width: 800px) {
   .section-story { padding: 2.4rem 0 2.8rem; }
